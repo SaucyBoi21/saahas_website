@@ -54,7 +54,7 @@ export default function Portfolio() {
       description:
         "Started my professional journey building responsive websites and learning modern web technologies. Contributed to team projects and gained valuable experience.",
       achievements: [
-        "Completed frontend development training",
+        "Developed PlantFlow, an ML pipeline achieving 96% segmentation accuracy on lettuce crop biomass images",
         "Contributed to 10+ projects",
         "Learned modern frameworks and tools",
       ],
@@ -63,7 +63,7 @@ export default function Portfolio() {
 
   const projects = [
     {
-      title: "Project One",
+      title: "PK Prophet",
       description:
         "A comprehensive web application built with modern technologies, focusing on performance and user experience.",
       highlights: [
@@ -72,10 +72,10 @@ export default function Portfolio() {
         "Integrated third-party APIs for real-time data",
         "Built with accessibility standards in mind",
       ],
-      tags: ["React", "TypeScript", "Tailwind"],
+      tags: ["TensorFlow", "TypeScript", "React"],
     },
     {
-      title: "Project Two",
+      title: "Operation Thinkpad",
       description:
         "A full-stack application showcasing expertise in backend development and database design.",
       highlights: [
@@ -84,10 +84,10 @@ export default function Portfolio() {
         "Implemented authentication and authorization",
         "Deployed using containerization and CI/CD pipelines",
       ],
-      tags: ["Node.js", "Express", "MongoDB"],
+      tags: ["Linux", "Express", "MongoDB"],
     },
     {
-      title: "Project Three",
+      title: "PlantFlow",
       description:
         "A Python-based application demonstrating versatility and problem-solving in data processing.",
       highlights: [
@@ -96,7 +96,7 @@ export default function Portfolio() {
         "Created intuitive command-line interface",
         "Optimized algorithms for large datasets",
       ],
-      tags: ["Python", "Django", "PostgreSQL"],
+      tags: ["TensorFlow", "Pandas", "Numpy"],
     },
   ];
 

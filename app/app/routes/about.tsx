@@ -9,12 +9,48 @@ export function meta({}: Route.MetaArgs) {
 
 export default function About() {
   const skills = [
-    "TypeScript/JavaScript",
-    "React & React Router",
-    "Node.js",
-    "Python",
-    "UI/UX Design",
-    "System Architecture",
+    {
+      name: "TypeScript",
+      icon: "🔷",
+      level: 4,
+      description: "Programming language that adds static typing to JavaScript for better code reliability",
+      color: "blue"
+    },
+    {
+      name: "React",
+      icon: "⚛️",
+      level: 5,
+      description: "Frontend framework used to build interactive user interfaces and single-page applications",
+      color: "blue"
+    },
+    {
+      name: "Node.js",
+      icon: "🟢",
+      level: 4,
+      description: "JavaScript runtime built on Chrome's V8 engine for server-side application development",
+      color: "green"
+    },
+    {
+      name: "Python",
+      icon: "🐍",
+      level: 3,
+      description: "High-level programming language known for its simplicity and versatility in web development",
+      color: "yellow"
+    },
+    {
+      name: "UI/UX Design",
+      icon: "🎨",
+      level: 4,
+      description: "Design discipline focused on creating intuitive, accessible, and user-friendly interfaces",
+      color: "pink"
+    },
+    {
+      name: "System Architecture",
+      icon: "🏗️",
+      level: 3,
+      description: "Practice of designing complex software systems and their components for scalability",
+      color: "mauve"
+    },
   ];
 
   const interests = [
@@ -40,56 +76,7 @@ export default function About() {
         </div>
 
         <div className="space-y-16">
-          {/* Introduction Section - Visual Cards Instead of Text Wall */}
-          <section className="relative">
-            <div className="flex items-center gap-4 mb-8">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
-              <div className="w-2 h-2 rounded-full bg-surface1"></div>
-              <h2 className="text-3xl font-semibold text-text">Introduction</h2>
-              <div className="w-2 h-2 rounded-full bg-surface1"></div>
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Card 1: Welcome */}
-              <div className="group relative p-6 rounded-xl bg-surface0 border border-surface1 hover:border-lavender/50 hover:shadow-lg hover:shadow-lavender/10 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute top-4 right-4 w-16 h-16 bg-lavender/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="text-4xl mb-4">👋</div>
-                  <h3 className="text-xl font-semibold text-text mb-3">Welcome</h3>
-                  <p className="text-subtext1 leading-relaxed text-xs">
-                    Passionate about creating meaningful digital experiences.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 2: Approach */}
-              <div className="group relative p-6 rounded-xl bg-surface0 border border-surface1 hover:border-blue/50 hover:shadow-lg hover:shadow-blue/10 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute top-4 right-4 w-16 h-16 bg-blue/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="text-4xl mb-4">⚡</div>
-                  <h3 className="text-xl font-semibold text-text mb-3">Approach</h3>
-                  <p className="text-subtext1 leading-relaxed text-xs">
-                    Clean code, user-centered design, continuous learning.
-                  </p>
-                </div>
-              </div>
-
-              {/* Card 3: Philosophy */}
-              <div className="group relative p-6 rounded-xl bg-surface0 border border-surface1 hover:border-teal/50 hover:shadow-lg hover:shadow-teal/10 transition-all duration-300 hover:-translate-y-1">
-                <div className="absolute top-4 right-4 w-16 h-16 bg-teal/5 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                <div className="relative">
-                  <div className="text-4xl mb-4">✨</div>
-                  <h3 className="text-xl font-semibold text-text mb-3">Focus</h3>
-                  <p className="text-subtext1 leading-relaxed text-xs">
-                    Elegant simplicity in powerful, intuitive solutions.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* Stats Section with Visual Cards - Enhanced with Novel Visual Element */}
+          {/* Experience Section - Now First */}
           <section className="relative">
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
@@ -98,7 +85,7 @@ export default function About() {
               <div className="w-2 h-2 rounded-full bg-surface1"></div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
             </div>
-            
+
             {/* Novel Visual Element: Interactive Stats with Progress Bars */}
             <div className="relative p-8 rounded-2xl bg-surface0 border border-surface1 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-lavender/5 via-transparent to-blue/5"></div>
@@ -152,7 +139,7 @@ export default function About() {
             </div>
           </section>
 
-          {/* Skills Section with Grid Layout */}
+          {/* Skills Section with Flip Cards */}
           <section className="relative">
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
@@ -161,16 +148,136 @@ export default function About() {
               <div className="w-2 h-2 rounded-full bg-surface1"></div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {skills.map((skill, index) => (
                 <div
                   key={index}
-                  className="p-5 rounded-lg bg-surface0 border border-surface1 hover:border-blue/40 hover:bg-surface1/50 transition-all duration-200 relative group"
+                  className="group relative h-64 cursor-pointer perspective-1000"
+                  style={{ perspective: '1000px' }}
                 >
-                  <div className="absolute top-2 left-2 w-1.5 h-1.5 rounded-full bg-surface2 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                  <span className="text-sm font-medium text-subtext1">{skill}</span>
+                  {/* Level Indicator */}
+                  <div className="absolute -right-2 top-4 z-20 flex flex-col gap-1">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <div
+                        key={i}
+                        className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                          i < skill.level
+                            ? skill.color === 'blue' ? 'bg-blue'
+                            : skill.color === 'green' ? 'bg-green'
+                            : skill.color === 'yellow' ? 'bg-yellow'
+                            : skill.color === 'pink' ? 'bg-pink'
+                            : skill.color === 'mauve' ? 'bg-mauve'
+                            : 'bg-lavender'
+                            : 'bg-surface2'
+                        }`}
+                      />
+                    ))}
+                  </div>
+
+                  {/* Flip Card Container */}
+                  <div className="relative w-full h-full transition-transform duration-500 preserve-3d group-hover:rotate-y-180">
+                    {/* Front of Card */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden rounded-xl bg-surface0 border border-surface1 hover:border-lavender/50 hover:shadow-lg hover:shadow-lavender/10 transition-all duration-300 flex flex-col items-center justify-center p-6">
+                      <div className="text-6xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                        {skill.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold text-text mb-2 text-center">
+                        {skill.name}
+                      </h3>
+                    </div>
+
+                    {/* Back of Card */}
+                    <div className="absolute inset-0 w-full h-full backface-hidden rotate-y-180 rounded-xl bg-gradient-to-br from-surface0 to-surface1 border border-surface1 flex flex-col justify-center p-6">
+                      <div className="text-4xl mb-3 text-center">
+                        {skill.icon}
+                      </div>
+                      <h3 className="text-lg font-semibold text-text mb-3 text-center">
+                        {skill.name}
+                      </h3>
+                      <p className="text-sm text-subtext1 leading-relaxed text-center flex-1 flex items-center">
+                        {skill.description}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               ))}
+            </div>
+
+            {/* Enhanced Legend */}
+            <div className="mt-10">
+              <div className="text-center mb-6">
+                <h3 className="text-lg font-semibold text-text mb-2">Skill Proficiency Levels</h3>
+                <p className="text-sm text-subtext1">Hover over cards to see detailed descriptions</p>
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-surface0 border border-surface1 hover:border-lavender/50 transition-colors">
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: 5 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-lavender"></div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">Expert</div>
+                    <div className="text-xs text-subtext1">5/5 - Deep expertise & leadership</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-surface0 border border-surface1 hover:border-blue/50 transition-colors">
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: 4 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-blue"></div>
+                    ))}
+                    <div className="w-2 h-2 rounded-full bg-surface2"></div>
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">Advanced</div>
+                    <div className="text-xs text-subtext1">4/5 - Strong proficiency & complex projects</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-surface0 border border-surface1 hover:border-green/50 transition-colors">
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: 3 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-green"></div>
+                    ))}
+                    {Array.from({ length: 2 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-surface2"></div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">Intermediate</div>
+                    <div className="text-xs text-subtext1">3/5 - Solid understanding & implementation</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-surface0 border border-surface1 hover:border-yellow/50 transition-colors">
+                  <div className="flex flex-col gap-1">
+                    {Array.from({ length: 2 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-yellow"></div>
+                    ))}
+                    {Array.from({ length: 3 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-surface2"></div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">Beginner</div>
+                    <div className="text-xs text-subtext1">2/5 - Basic knowledge & simple projects</div>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 p-3 rounded-lg bg-surface0 border border-surface1 hover:border-red/50 transition-colors">
+                  <div className="flex flex-col gap-1">
+                    <div className="w-2 h-2 rounded-full bg-red"></div>
+                    {Array.from({ length: 4 }, (_, i) => (
+                      <div key={i} className="w-2 h-2 rounded-full bg-surface2"></div>
+                    ))}
+                  </div>
+                  <div>
+                    <div className="font-medium text-text">Novice</div>
+                    <div className="text-xs text-subtext1">1/5 - Learning fundamentals</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 

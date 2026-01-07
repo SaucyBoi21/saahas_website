@@ -1,2 +1,3 @@
 # saahas_website
-Personal Website of Saahas Swaroop
+
+Saahas Swaroop's personal website. Built with React.
