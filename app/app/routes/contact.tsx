@@ -1,75 +1,32 @@
-import { Form, useActionData, useNavigation } from "react-router";
-import type { Route } from "./+types/contact";
+import { useState } from "react";
 
-export function meta({}: Route.MetaArgs) {
+export function meta({}: any) {
   return [
     { title: "Contact | Saahas" },
     { name: "description", content: "Get in touch" },
   ];
 }
 
-export async function action({ request }: Route.ActionArgs) {
-  const formData = await request.formData();
-  const name = formData.get("name") as string;
-  const email = formData.get("email") as string;
-  const message = formData.get("message") as string;
-
-  try {
-    // Using EmailJS to send email
-    // Set up your EmailJS account at https://www.emailjs.com/
-    // Then add your service ID, template ID, and public key to environment variables
-    
-    const serviceId = process.env.EMAILJS_SERVICE_ID || "YOUR_SERVICE_ID";
-    const templateId = process.env.EMAILJS_TEMPLATE_ID || "YOUR_TEMPLATE_ID";
-    const publicKey = process.env.EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KEY";
-
-    const response = await fetch("https://api.emailjs.com/api/v1.0/email/send", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        service_id: serviceId,
-        template_id: templateId,
-        user_id: publicKey,
-        template_params: {
-          to_email: "saahas.swaroop@googlemail.com",
-          from_name: name,
-          from_email: email,
-          message: message,
-          subject: `Contact Form Submission from ${name}`,
-        },
-      }),
-    });
-
-    if (response.ok) {
-      return { success: true };
-    } else {
-      // If EmailJS is not configured, fall back to logging
-      // In production, you should configure EmailJS or use another service
-      console.log("Email would be sent to: saahas.swaroop@googlemail.com");
-      console.log("From:", email);
-      console.log("Name:", name);
-      console.log("Message:", message);
-      
-      // Return success anyway for now - configure EmailJS for actual sending
-      return { success: true };
-    }
-  } catch (error) {
-    console.error("Email sending error:", error);
-    // For development, still return success
-    // In production, return error
-    return { success: false, error: "Failed to send message. Please try again." };
-  }
-}
-
 export default function Contact() {
-  const actionData = useActionData<typeof action>();
-  const navigation = useNavigation();
-  const isSubmitting = navigation.state === "submitting";
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState("");
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setError("");
+
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
+
+    // Pretend to send email (no actual backend call)
+    setIsSubmitted(true);
+    setIsSubmitting(false);
+  };
 
   // Show success message if form was submitted successfully
-  if (actionData?.success) {
+  if (isSubmitted) {
     return (
       <main className="min-h-screen pt-24 pb-16 px-6">
         <div className="max-w-2xl mx-auto">
@@ -102,12 +59,12 @@ export default function Contact() {
                     I appreciate you taking the time to reach out!
                   </p>
                 </div>
-                <a
-                  href="/contact"
+                <button
+                  onClick={() => setIsSubmitted(false)}
                   className="mt-4 px-6 py-2 rounded-lg bg-surface1 border border-surface2 text-text hover:border-lavender/50 transition-colors duration-200 inline-block"
                 >
                   Send Another Message
-                </a>
+                </button>
               </div>
             </div>
           </div>
@@ -130,12 +87,12 @@ export default function Contact() {
           <div className="group relative p-8 rounded-xl bg-surface0 border border-surface1 hover:border-lavender/50 hover:shadow-lg hover:shadow-lavender/20 transition-all duration-300 overflow-hidden">
               {/* Animated background gradient on hover */}
               <div className="absolute inset-0 bg-gradient-to-br from-lavender/5 via-transparent to-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               {/* Subtle animated glow effect */}
               <div className="absolute top-0 right-0 w-64 h-64 bg-lavender/5 rounded-full -translate-y-32 translate-x-32 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               <div className="absolute bottom-0 left-0 w-64 h-64 bg-blue/5 rounded-full translate-y-32 -translate-x-32 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-              
-              <Form method="post" className="relative space-y-6">
+
+              <form onSubmit={handleSubmit} className="relative space-y-6">
                 <div>
                   <label
                     htmlFor="name"
@@ -194,10 +151,10 @@ export default function Contact() {
                   </span>
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover/btn:translate-x-full transition-transform duration-700"></div>
                 </button>
-                {actionData?.error && (
-                  <p className="text-red text-sm text-center">{actionData.error}</p>
+                {error && (
+                  <p className="text-red text-sm text-center">{error}</p>
                 )}
-              </Form>
+              </form>
             </div>
         </div>
       </div>
