@@ -3,13 +3,15 @@ import type { Config } from "@react-router/dev/config";
 export default {
   appDirectory: "app",
 
-  // We are deploying to GitHub Pages (static hosting), so disable SSR.
+  // GitHub Pages = static host, so no runtime SSR
   ssr: false,
 
-  // Pre-render routes to static HTML files (GitHub Pages needs index.html).
-  prerender: true,
+  // SPA mode (no explicit `prerender` field) – React Router will output a
+  // single HTML file (index.html) that can hydrate any route.
+  // See: https://reactrouter.com/how-to/spa
 
-  // Your site lives at /saahas_website on GitHub Pages.
+  // Your app is served from /saahas_website on GitHub Pages
   basename: "/saahas_website",
 } satisfies Config;
+
 
