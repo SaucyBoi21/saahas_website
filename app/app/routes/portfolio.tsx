@@ -16,11 +16,9 @@ export default function Portfolio() {
       company: "Manhattan Associates",
       period: "Incoming: 2026",
       description:
-        "Leading development of scalable web applications and mentoring junior developers. Focused on modern architecture and best practices.",
+        "Will be joining Manhattan Associates as a Research & Development Intern in June 2026. I will be working as a part of the transportation team.",
       achievements: [
-        "Architected microservices infrastructure",
-        "Improved application performance by 40%",
-        "Led team of 5 developers",
+        "",
       ],
     },
     {
@@ -28,11 +26,11 @@ export default function Portfolio() {
       company: "Clayton Labs",
       period: "2025 - Present",
       description:
-        "Developed full-stack applications from concept to deployment. Worked closely with design and product teams to deliver user-centric solutions.",
+        "Developed full-stack applications that consolidated SBIR/STTR data for use by other researchers and developers.",
       achievements: [
-        "Built customer-facing dashboard",
-        "Implemented CI/CD pipelines",
-        "Reduced deployment time by 60%",
+        "Created a centralized database for SBIR/STTR data",
+        "Build new API routes that allowed for the retrieval of SBIR/STTR data by other researchers and developers",
+        "Assisted researchers with data analysis and visualization",
       ],
     },
     {
@@ -40,11 +38,11 @@ export default function Portfolio() {
       company: "Apparity",
       period: "2023",
       description:
-        "Created interactive web experiences for clients across various industries. Collaborated on multiple projects simultaneously.",
+        "Built a tool that extended the capabilities of the existing product to be compatible with Python code.",
       achievements: [
-        "Delivered 20+ client projects",
-        "Increased client satisfaction scores",
-        "Optimized codebase for maintainability",
+        "Built full-stack modules to expand functionality of the product",
+        "Optimized API functions to perform at 60% faster speeds",
+        "Deployed modules through cloud services to allow for scalability and ease of use",
       ],
     },
     {
@@ -52,11 +50,11 @@ export default function Portfolio() {
       company: "Ferrarezi Labs",
       period: "2022 - 2023",
       description:
-        "Started my professional journey building responsive websites and learning modern web technologies. Contributed to team projects and gained valuable experience.",
+        "Developed PlantFlow, an ML pipeline achieving 96% segmentation accuracy on lettuce crop biomass images.",
       achievements: [
-        "Developed PlantFlow, an ML pipeline achieving 96% segmentation accuracy on lettuce crop biomass images",
-        "Contributed to 10+ projects",
-        "Learned modern frameworks and tools",
+        "Processed and cleaned large datasets of lettuce crop biomass images",
+        "Build a custom data cleaning pipeline to prepare images for training",
+        "Presented findings at research symposium",
       ],
     },
   ];
@@ -65,38 +63,22 @@ export default function Portfolio() {
     {
       title: "PK Prophet",
       description:
-        "A comprehensive web application built with modern technologies, focusing on performance and user experience.",
+        "A hackathon compeition project the utilized an LSTM model to predict placement of penalty kicks.",
       highlights: [
-        "Implemented responsive design for multiple device sizes",
-        "Optimized performance with code splitting and lazy loading",
-        "Integrated third-party APIs for real-time data",
-        "Built with accessibility standards in mind",
+        "Integrated ML model with fullstack web app to allow user interaction",
+        "Placed 3rd at GT Ramblin Hacks competition",
       ],
       tags: ["TensorFlow", "TypeScript", "React"],
     },
     {
-      title: "Operation Thinkpad",
+      title: "Thinkpad Reforged",
       description:
-        "A full-stack application showcasing expertise in backend development and database design.",
+        "Restored a 2018 Thinkpad T480s and omptimized internal components to improve performance.",
       highlights: [
-        "Designed and implemented RESTful API architecture",
-        "Created efficient database schema with proper indexing",
-        "Implemented authentication and authorization",
-        "Deployed using containerization and CI/CD pipelines",
+        "Installed Arch Linux and developed and optimized custom linux ecosystem",
+        "Integrated diverse open-source technologies (Qtile, Neovim, Rofi, Alacritty)",
       ],
-      tags: ["Linux", "Express", "MongoDB"],
-    },
-    {
-      title: "PlantFlow",
-      description:
-        "A Python-based application demonstrating versatility and problem-solving in data processing.",
-      highlights: [
-        "Developed scalable data processing pipeline",
-        "Implemented automated testing suite",
-        "Created intuitive command-line interface",
-        "Optimized algorithms for large datasets",
-      ],
-      tags: ["TensorFlow", "Pandas", "Numpy"],
+      tags: ["Linux", "Electronics", "C"],
     },
   ];
 
