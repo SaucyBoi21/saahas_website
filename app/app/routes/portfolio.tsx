@@ -14,17 +14,19 @@ export default function Portfolio() {
     {
       title: "Reseach & Development Intern",
       company: "Manhattan Associates",
-      period: "Incoming: 2026",
+      period: "Summer 2026",
       description:
         "Will be joining Manhattan Associates as a Research & Development Intern in June 2026. I will be working as a part of the transportation team.",
       achievements: [
-        "",
+        "Reworked the order analysis page with clearer, more interpretable visualizations to surface algorithm insights for end users",
+        "Extended backend tracing in Java and Spring Boot to capture richer algorithm telemetry for deeper performance analysis",
+        "Delivered an Angular front-end from design through production, integrating it into the company's flagship platform",
       ],
     },
     {
       title: "Research Assistant",
       company: "Clayton Labs",
-      period: "2025 - Present",
+      period: "2025 - 2026",
       description:
         "Developed full-stack applications that consolidated SBIR/STTR data for use by other researchers and developers.",
       achievements: [
@@ -60,6 +62,28 @@ export default function Portfolio() {
   ];
 
   const projects = [
+    {
+      title: "SiliconJackets",
+      description:
+        "Georgia Tech's student chip design club, where I take digital designs from RTL all the way through to physical layout for tapeout.",
+      highlights: [
+        "Wrote tapeout-ready RTL in SystemVerilog and carried it through synthesis, place-and-route, and timing closure in Cadence Innovus",
+        "Built a SystemVerilog testbench that reached 98% functional coverage across targeted cases",
+        "Designing a configurable SPI IP block that handles clock-domain crossings between the master and slave clocks",
+      ],
+      tags: ["SystemVerilog", "Cadence Innovus", "RTL Design"],
+    },
+    {
+      title: "Multiprocessor CPU Scheduler",
+      description:
+        "A multithreaded CPU scheduler in C built to explore how different scheduling policies affect performance.",
+      highlights: [
+        "Implemented FIFO, Round-Robin, and FCFS scheduling policies using pthreads",
+        "Handled thread synchronization with mutexes and condition variables to eliminate deadlocks and race conditions",
+        "Benchmarked throughput and context-switching behavior across a range of workloads",
+      ],
+      tags: ["C", "pthreads", "Concurrency"],
+    },
     {
       title: "PK Prophet",
       description:

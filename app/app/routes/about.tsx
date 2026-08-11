@@ -10,61 +10,61 @@ export function meta({}: Route.MetaArgs) {
 export default function About() {
   const skills = [
     {
-      name: "TypeScript",
-      icon: "🔷",
+      name: "SystemVerilog & RTL",
+      icon: "📐",
       level: 4,
-      description: "Programming language that adds static typing to JavaScript for better code reliability",
+      description: "Building synthesizable hardware in SystemVerilog — pipelined datapaths, control logic, and reusable IP blocks",
       color: "blue"
     },
     {
-      name: "React",
-      icon: "⚛️",
-      level: 5,
-      description: "Frontend framework used to build interactive user interfaces and single-page applications",
-      color: "blue"
+      name: "Digital Design & Microarchitecture",
+      icon: "⚙️",
+      level: 4,
+      description: "Designing at the register-transfer level: pipelining, hazards, forwarding, and control for processors like RISC-V",
+      color: "mauve"
     },
     {
-      name: "Node.js",
-      icon: "🟢",
+      name: "Functional Verification",
+      icon: "🔬",
+      level: 3,
+      description: "Writing self-checking testbenches and driving coverage to prove a design does what it's supposed to",
+      color: "pink"
+    },
+    {
+      name: "C & Systems Programming",
+      icon: "🔧",
       level: 4,
-      description: "JavaScript runtime built on Chrome's V8 engine for server-side application development",
+      description: "Low-level C with pthreads — schedulers, virtual memory, and concurrency without the race conditions",
       color: "green"
+    },
+    {
+      name: "EDA & Physical Design",
+      icon: "🧮",
+      level: 3,
+      description: "Driving designs through synthesis, place-and-route, and timing closure with Cadence Innovus and waveform tools",
+      color: "yellow"
     },
     {
       name: "Python",
       icon: "🐍",
       level: 3,
-      description: "High-level programming language known for its simplicity and versatility in web development",
-      color: "yellow"
-    },
-    {
-      name: "UI/UX Design",
-      icon: "🎨",
-      level: 4,
-      description: "Design discipline focused on creating intuitive, accessible, and user-friendly interfaces",
-      color: "pink"
-    },
-    {
-      name: "System Architecture",
-      icon: "🏗️",
-      level: 3,
-      description: "Practice of designing complex software systems and their components for scalability",
-      color: "mauve"
+      description: "Scripting, data wrangling, and quick tooling to automate the tedious parts of a workflow",
+      color: "lavender"
     },
   ];
 
   const interests = [
-    { name: "Open Source", icon: "🌱" },
-    { name: "Web Performance", icon: "⚡" },
-    { name: "User Experience", icon: "🎨" },
-    { name: "Clean Code", icon: "✨" },
+    { name: "Chip Design", icon: "🧩" },
+    { name: "Computer Architecture", icon: "🖥️" },
+    { name: "Verification", icon: "🔎" },
+    { name: "Low-Level Systems", icon: "🔩" },
     { name: "Continuous Learning", icon: "📚" },
   ];
 
   const stats = [
-    { label: "Projects", value: "50+" },
-    { label: "Years Experience", value: "5+" },
-    { label: "Technologies", value: "20+" },
+    { label: "Internships", value: "4" },
+    { label: "Projects", value: "6+" },
+    { label: "HDLs & Languages", value: "8" },
   ];
 
   return (
@@ -73,6 +73,11 @@ export default function About() {
         <div className="mb-16">
           <h1 className="text-5xl font-bold text-text mb-4">About</h1>
           <div className="w-16 h-1 bg-gradient-to-r from-lavender to-blue mb-8 rounded-full"></div>
+          <p className="text-lg text-subtext1 leading-relaxed max-w-2xl">
+            I'm a computer engineering student at Georgia Tech who likes to work up and down the stack —
+            from SystemVerilog RTL and chip tapeouts to full-stack web apps. Most of my time goes toward
+            digital design and VLSI: building hardware, verifying it, and pushing it through to silicon.
+          </p>
         </div>
 
         <div className="space-y-16">
@@ -81,7 +86,7 @@ export default function About() {
             <div className="flex items-center gap-4 mb-8">
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
               <div className="w-2 h-2 rounded-full bg-surface1"></div>
-              <h2 className="text-3xl font-semibold text-text">Experience</h2>
+              <h2 className="text-3xl font-semibold text-text">By the Numbers</h2>
               <div className="w-2 h-2 rounded-full bg-surface1"></div>
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
             </div>
@@ -91,7 +96,7 @@ export default function About() {
               <div className="absolute inset-0 bg-gradient-to-br from-lavender/5 via-transparent to-blue/5"></div>
               <div className="relative grid grid-cols-1 md:grid-cols-3 gap-8">
                 {stats.map((stat, index) => {
-                  const percentages = [85, 100, 80]; // Visual representation percentages
+                  const percentages = [80, 65, 100]; // Visual representation percentages
                   return (
                     <div key={index} className="space-y-4">
                       <div className="flex items-baseline justify-between mb-2">
@@ -124,7 +129,7 @@ export default function About() {
               <div className="h-px flex-1 bg-gradient-to-r from-transparent via-surface1 to-transparent"></div>
             </div>
             <p className="text-subtext1 leading-relaxed mb-6 text-sm max-w-2xl">
-              Exploring new technologies, contributing to open source, sharing knowledge.
+              What I keep coming back to: how software actually runs on silicon, and building the hardware underneath it.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {interests.map((interest, index) => (
@@ -300,10 +305,10 @@ export default function About() {
               
               <div className="relative grid grid-cols-2 md:grid-cols-4 gap-6">
                 {[
-                  { icon: "⚡", label: "Rust", desc: "Systems programming" },
-                  { icon: "🚀", label: "Go", desc: "Backend services" },
-                  { icon: "🎨", label: "Svelte", desc: "Frontend framework" },
-                  { icon: "🔧", label: "Kubernetes", desc: "Container orchestration" },
+                  { icon: "⏱️", label: "Clock Domain Crossing", desc: "Safe async design" },
+                  { icon: "🗺️", label: "Physical Design", desc: "Synthesis to layout" },
+                  { icon: "✅", label: "UVM", desc: "Verification methodology" },
+                  { icon: "🧠", label: "RISC-V", desc: "Processor microarchitecture" },
                 ].map((item, index) => (
                   <div
                     key={index}
