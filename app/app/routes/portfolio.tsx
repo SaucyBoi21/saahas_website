@@ -12,7 +12,7 @@ export default function Portfolio() {
 
   const experience = [
     {
-      title: "Reseach & Development Intern",
+      title: "Research & Development Intern",
       company: "Manhattan Associates",
       period: "Summer 2026",
       description:
