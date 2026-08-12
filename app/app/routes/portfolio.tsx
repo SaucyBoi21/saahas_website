@@ -16,7 +16,7 @@ export default function Portfolio() {
       company: "Manhattan Associates",
       period: "Summer 2026",
       description:
-        "Will be joining Manhattan Associates as a Research & Development Intern in June 2026. I will be working as a part of the transportation team.",
+        "I joined Manhattan Associates as a Research & Development Intern in May 2026. I worked as a part of the order management team, where I revamped the order analysis page.",
       achievements: [
         "Reworked the order analysis page with clearer, more interpretable visualizations to surface algorithm insights for end users",
         "Extended backend tracing in Java and Spring Boot to capture richer algorithm telemetry for deeper performance analysis",
